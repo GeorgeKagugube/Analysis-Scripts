@@ -20,9 +20,13 @@ library(AnnotationHub)
 
 ## The functions start from here
 transcriptome_annotation <- function(data_obj){
-  # lOAD THE REQUIRED LIBRARIES HERE
-  library("AnnotationDbi")
-  library("org.Dr.eg.db")
+  
+  # This function can be used to annotate RNA seq dataset where the row names are the Ensembl gene IDs
+  # The returned object will have   
+
+  ## Load the desired libraries for analysis here 
+  library(AnnotationDbi)
+  library(org.Dr.eg.db)
   
   ### Add to the data structure of the gene symbols and entrezid
   data_obj$ENTREZID <- mapIds(org.Dr.eg.db,
